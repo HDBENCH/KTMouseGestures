@@ -1,0 +1,50 @@
+Simple mouse gesture functions.
+
+------------------------------------------
+right button click and move
+------------------------------------------
+U = UP
+D = DOWN
+L = LEFT
+R = RIGHT
+
+---------------------
+normal gestures
+---------------------
+UD  = reload
+UDU = super reload
+DR  = close
+L   = back
+R   = forward
+D   = new tab
+DU  = new tab(background)
+
+---------------------
+link gestures
+---------------------
+link+D   = new tab
+link+DU  = new tab(background)
+
+---------------------
+History
+---------------------
+23.11.19
+Remove unnecessary permissions
+
+
+23.11.18
+Update manifest version to 3
+
+17.8.8.0
+fix: chrome ver 60
+
+0.16.4.160
+fix: Gesture is executed with the left button up
+
+0.16.4.150
+add: link gestures
+add: new tab(background)
+del: file link operation
+
+0.1.0.2
+First release
