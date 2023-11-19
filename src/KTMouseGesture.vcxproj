@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="chrome\js\background.js" />
+    <None Include="chrome\js\contentscript.js" />
+    <None Include="chrome\manifest.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="chrome\img\icon128.png" />
+    <Image Include="chrome\img\icon16.png" />
+    <Image Include="chrome\img\icon32.png" />
+    <Image Include="chrome\img\icon48.png" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5ED49C4B-1DE7-4909-9968-E98381A32E64}</ProjectGuid>
+    <RootNamespace>KTMouseGesture</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>if exist "$(OutputPath)chrome" rd /s /q "$(OutputPath)chrome"
+md "$(OutputPath)chrome"
+md "$(OutputPath)chrome\img"
+md "$(OutputPath)chrome\js"
+
+copy "$(SolutionDir)chrome\manifest.json" "$(OutputPath)chrome\manifest.json"
+copy "$(SolutionDir)chrome\img\icon16.png" "$(OutputPath)chrome\img\icon16.png"
+copy "$(SolutionDir)chrome\img\icon32.png" "$(OutputPath)chrome\img\icon32.png"
+copy "$(SolutionDir)chrome\img\icon48.png" "$(OutputPath)chrome\img\icon48.png"
+copy "$(SolutionDir)chrome\img\icon128.png" "$(OutputPath)chrome\img\icon128.png"
+copy "$(SolutionDir)chrome\js\background.js" "$(OutputPath)chrome\js\background.js"
+copy "$(SolutionDir)chrome\js\contentscript.js" "$(OutputPath)chrome\js\contentscript.js"
+
+
+powershell compress-archive -force "$(OutputPath)chrome\manifest.json" "$(OutputPath)$(ProjectName).zip"
+powershell compress-archive -update -path "$(OutputPath)chrome\img" "$(OutputPath)$(ProjectName).zip"
+powershell compress-archive -update -path "$(OutputPath)chrome\js" "$(OutputPath)$(ProjectName).zip"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

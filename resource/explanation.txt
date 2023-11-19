@@ -31,7 +31,6 @@ History
 23.11.19
 Remove unnecessary permissions
 
-
 23.11.18
 Update manifest version to 3
 

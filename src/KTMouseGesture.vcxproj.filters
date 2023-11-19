@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="chrome">
+      <UniqueIdentifier>{caab25ba-64b8-4ceb-9d7a-d60033fb6cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="chrome\img">
+      <UniqueIdentifier>{52cc3b27-4a47-4fdd-b81d-d2c5b57e9312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="chrome\js">
+      <UniqueIdentifier>{39a4ea82-8a9a-4450-a01a-65a087ce4109}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="chrome\manifest.json">
+      <Filter>chrome</Filter>
+    </None>
+    <None Include="chrome\js\background.js">
+      <Filter>chrome\js</Filter>
+    </None>
+    <None Include="chrome\js\contentscript.js">
+      <Filter>chrome\js</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="chrome\img\icon16.png">
+      <Filter>chrome\img</Filter>
+    </Image>
+    <Image Include="chrome\img\icon32.png">
+      <Filter>chrome\img</Filter>
+    </Image>
+    <Image Include="chrome\img\icon48.png">
+      <Filter>chrome\img</Filter>
+    </Image>
+    <Image Include="chrome\img\icon128.png">
+      <Filter>chrome\img</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -6,7 +6,6 @@
     {
       "all_frames": true,
       "js": [ "js/contentscript.js" ],
-      "matches": [ "<all_urls>" ],
       "run_at": "document_start"
     }
   ],
