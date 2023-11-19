@@ -1,0 +1,26 @@
+{
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [ "js/contentscript.js" ],
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_start"
+    }
+  ],
+  "description": "Mouse Gestures.",
+  "icons": {
+    "128": "img/icon128.png",
+    "16": "img/icon16.png",
+    "32": "img/icon32.png",
+    "48": "img/icon48.png"
+  },
+  "manifest_version": 3,
+  "minimum_chrome_version": "88",
+  "author": "HDBENCH.NET",
+  "name": "KT Mouse Gestures",
+  "permissions": [ "activeTab" ],
+  "version": "23.11.19.0"
+}
