@@ -6,6 +6,7 @@
     {
       "all_frames": true,
       "js": [ "js/contentscript.js" ],
+      "matches": [ "<all_urls>" ],
       "run_at": "document_start"
     }
   ],
@@ -21,5 +22,5 @@
   "author": "HDBENCH.NET",
   "name": "KT Mouse Gestures",
   "permissions": [ "activeTab" ],
-  "version": "23.11.19.0"
+  "version": "23.11.21.0"
 }
