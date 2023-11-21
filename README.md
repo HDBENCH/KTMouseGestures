@@ -1,7 +1,3 @@
-<head>
-  <meta name="google-site-verification" content="JLVaxZBjCbQ0utrbf9nMPbPU6E7vk4Smn9PrbugzAyg" />
-</head>
-    
 # KTMouseGestures
 <BR>
 
