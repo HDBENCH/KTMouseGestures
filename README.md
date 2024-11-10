@@ -34,6 +34,9 @@ link+DU  = new tab(background)<BR>
 ---------------------<BR>
 History<BR>
 ---------------------<BR>
+24.11.10<BR>
+Exclude '*://remotedesktop.google.com/*'<BR>
+<BR>
 23.11.21<BR>
 Remove unnecessary permissions<BR>
 <BR>
