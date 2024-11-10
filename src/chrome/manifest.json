@@ -7,6 +7,7 @@
       "all_frames": true,
       "js": [ "js/contentscript.js" ],
       "matches": [ "<all_urls>" ],
+      "exclude_matches": [ "*://remotedesktop.google.com/*" ],
       "run_at": "document_start"
     }
   ],
@@ -22,5 +23,5 @@
   "author": "HDBENCH.NET",
   "name": "KT Mouse Gestures",
   "permissions": [ "activeTab" ],
-  "version": "23.11.21.0"
+  "version": "24.11.10.0"
 }

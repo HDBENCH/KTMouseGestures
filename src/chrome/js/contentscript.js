@@ -37,7 +37,7 @@ var mouseGesture = {
         {
             //DBG_MSG("mouseGesture::mousedown=" + e.button + ", x=" + e.screenX + ", y=" + e.screenY);
             DBG_MSG("mouseGesture::mousedown=target=" + e.target.href + ", tagName=" + e.target.tagName);
-            DBG_MSG("mouseGesture::mousedown=URL=" + e.target.parentNode.href + ", tagName=" + e.target.parentNode.tagName + ", e.srcElement=" + e.srcElement.baseURI);
+            DBG_MSG("mouseGesture::mousedown=URL=" + e.target.parentNode.href + ", tagName=" + e.target.parentNode.tagName + ", e.target=" + e.target.baseURI);
           
             if (e.button !== 2) return;
             
@@ -64,7 +64,7 @@ var mouseGesture = {
         
         window.addEventListener("mousemove", function (e)
         {
-            DBG_MSG("mouseGesture::mousemove=" + e.button + ", x=" + e.screenX + ", y=" + e.screenY + ", target=" + e.target.href + ", tagName=" + e.target.tagName + ", URL=" + e.target.parentNode.href + ", tagName=" + e.target.parentNode.tagName + ", e.srcElement=" + e.srcElement.baseURI + ", tagName=" + e.srcElement.baseURI.tagName);
+            DBG_MSG("mouseGesture::mousemove=" + e.button + ", x=" + e.screenX + ", y=" + e.screenY + ", target=" + e.target.href + ", tagName=" + e.target.tagName + ", URL=" + e.target.parentNode.href + ", tagName=" + e.target.parentNode.tagName + ", e.target=" + e.target.baseURI + ", tagName=" + e.target.baseURI.tagName);
 
  //           if (e.button !== 2) {
  //               DBG_MSG("mouseGesture::mousemove=e.button !== 2");
@@ -125,7 +125,7 @@ var mouseGesture = {
             
             //DBG_MSG("mouseGesture::mouseup=" + e.button + ", target=" + e.target.href);
             DBG_MSG("mouseGesture::mouseup=" + e.button + ", url=" + mouseGesture.mouse_info.url);
-            DBG_MSG("mouseGesture::mouseup=" + e.button + ", baseURI=" + e.srcElement.baseURI);
+            DBG_MSG("mouseGesture::mouseup=" + e.button + ", baseURI=" + e.target.baseURI);
             DBG_MSG("cmd=" + mouseGesture.mouse_info.cmd);
             
             if (e.button !== 2) return;
@@ -171,7 +171,7 @@ var mouseGesture = {
 
                 case "DU":
                 {
-                    createNewTabBG(e.srcElement.baseURI);
+                    createNewTabBG(e.target.baseURI);
                 }
                 break;
             }
